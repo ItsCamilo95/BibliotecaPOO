@@ -11,7 +11,7 @@ public class Main {
         libreria.addBook(libro1.title, libro1);
         libreria.addBook(libro2.title, libro2);
 
-        libreria.getBookByTitle("1984");
+        libreria.getBookByTitle("La nausea");
 
     }
 }
