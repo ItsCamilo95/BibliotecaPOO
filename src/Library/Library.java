@@ -25,4 +25,8 @@ public class Library {
         }
     }
 
+    public void getBookbyAuthor(){
+        System.out.println("Mensaje de prueba");
+    }
+
 }
