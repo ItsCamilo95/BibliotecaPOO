@@ -4,19 +4,16 @@ package Library;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class Library {
-    private String name;
-    private HashMap<String, Book> stock;
+    public static HashMap<String, Book> stock;
 
-
-
-    public Library(String name) {
-        this.name = name;
-        this.stock = new HashMap<>();
-        System.out.println("|-- Bienvenido a la libreria: " + name);
+    public Library() {
+        stock = new HashMap<>();
     }
+
 
     public void addBook(String bookTitle, Book book) {
         stock.put(bookTitle, book);

@@ -10,13 +10,16 @@ public class Book {
     private int year;
     private double price;
 
-    public Book(String title, String author, String ISBN, String editorial, int year, double price) {
-        this.title = title;
+    protected boolean lent;
+
+    public Book(String title, String author, String ISBN, String editorial, int year, double price, boolean lent) {
+        this.title = title.toLowerCase();
         this.author = author;
         this.ISBN = ISBN;
         this.editorial = editorial;
         this.year = year;
         this.price = price;
+        this.lent = lent;
     }
 
     /* Cuando se imprime el hashmap, se imprime una representación del objeto book de esta forma
@@ -38,7 +41,16 @@ public class Book {
 
     public String getAuthor() {
         return this.author;
+    }
 
+    public boolean getLent() {
+        return this.lent;
+    }
 
+    //cuando lent es false, significa que no se puede prestar
+    // cuando lent es true, significa que se puede prestar
+    //el setter de lent permite indicar si un libro fue prestado o no
+    public void setLent(boolean lent) {
+        this.lent = lent;
     }
 }
