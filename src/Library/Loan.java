@@ -47,5 +47,16 @@ public class Loan{
             }
         }
     }
+    public void returnBook(String bookTitle) {
+        if (loanStock.containsKey(bookTitle)) {
+            Library.stock.get(bookTitle).setLent(true);
+            loanStock.remove(bookTitle);
+            System.out.println("|- El libro con título '" + bookTitle + "' ha sido devuelto con éxito.");
+        } else {
+            System.out.println("|- No encontramos el libro en el registro de préstamos!");
+
+        }
+
+    }
 
 }

@@ -14,6 +14,7 @@ public class Main {
         libreria.addBook("1984", libro1);
         libreria.addBook("La nausea", libro2);
 
+
         Loan prestamo = new Loan();
         String libroPrestar = "1984";
         if (prestamo.verifyBook(libroPrestar)){
@@ -31,5 +32,19 @@ public class Main {
         }
 
         prestamo.showLoanStock();
+
+        Loan prestamo2 = new Loan();
+        String tituloLibroADevolver = "1984";
+        prestamo.returnBook(tituloLibroADevolver);
+
+
+
+
+
+
     }
+
+
+
+
 }
