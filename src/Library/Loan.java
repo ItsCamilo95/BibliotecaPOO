@@ -1,6 +1,8 @@
 package Library;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Loan{
     //este hashmap contendrá todos los libros prestados.
@@ -13,6 +15,7 @@ public class Loan{
     }
 
     public boolean verifyBook(String bookTitle){
+        bookTitle = bookTitle.toLowerCase();
         //se verifica si la libreria tiene el libro
         if (Library.stock.containsKey(bookTitle)){
             // se evalua si el libro se puede prestar o no ( si es true o false)
@@ -30,11 +33,12 @@ public class Loan{
     }
 
     public void lendBook(String bookTitle, lentData data){
-        loanStock.put(bookTitle, data);
+        System.out.println("|- Te hemos prestado el libro, por favor se responsable.");
+        loanStock.put(bookTitle.toLowerCase(), data);
 
         //ya que se prestó el libro, es necesario actualizar el campo lent
         //para que nadie mas pueda prestarlo tambien
-        Library.stock.get(bookTitle).setLent(false);
+        Library.stock.get(bookTitle.toLowerCase()).setLent(false);
     }
 
     public void showLoanStock() {
@@ -45,6 +49,22 @@ public class Loan{
             for (lentData data : loanStock.values()) {
                 System.out.println(data);
             }
+        }
+    }
+
+    public void showUserLent(String id){
+        List<lentData> booksFound = new ArrayList<>();
+        for (lentData books : loanStock.values()) {
+            if (books.getId().equalsIgnoreCase(id)) {
+                booksFound.add(books);
+            }
+        }
+
+        if (!booksFound.isEmpty()) {
+            System.out.println("|- El usuario con id: "+id+" tiene los siguientes libros: ");
+            booksFound.forEach(book -> System.out.println(book));
+        } else {
+            System.out.println("|- ¡Ups...! Al parecer el usuario no ha prestado ningún libro.");
         }
     }
     public void returnBook(String bookTitle) {

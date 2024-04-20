@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
 public class Library {
     public static HashMap<String, Book> stock;
 
@@ -16,7 +15,7 @@ public class Library {
 
 
     public void addBook(String bookTitle, Book book) {
-        stock.put(bookTitle, book);
+        stock.put(bookTitle.toLowerCase(), book);
     }
 
     public void getBookByTitle(String title) {
@@ -27,9 +26,6 @@ public class Library {
             System.out.println("|- ¡Ups...! El libro no se encuentra en nuestro inventario.");
         }
     }
-
-
-
 
     //se cre una lista para almacenar libros que se encuentren
     // se itera sobre el stock
@@ -47,10 +43,9 @@ public class Library {
             booksFound.forEach(book -> System.out.println(book));
         } else {
             System.out.println("|- ¡Ups...! No tenemos libros de ese autor en nuestro inventario.");
+            System.out.println("|- ¿Lo escribíste bien?");
         }
     }
-
-
 
 
    //esto es para mostrar el inventaroi
@@ -64,8 +59,5 @@ public class Library {
             }
         }
     }
-
-
-
 
 }

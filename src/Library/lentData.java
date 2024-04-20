@@ -20,14 +20,16 @@ public class lentData {
     //metodo para poder imprimir el objeto, al igual que en la clase book
     @Override
     public String toString() {
-        return "nombre: " + name+"\n"+
-                "id: " + id +"\n"+
-                "libro prestado: " + book +"\n"+
-                "fecha: " + date +"\n"+
-                "dias prestados: " + lentDays +"\n";
+        return  "\n"+"|------------------------|"+"\n"+
+                "|- Nombre: " + name+"\n"+
+                "|- ID: " + id +"\n"+
+                "|- Libro prestado: " + book +"\n"+
+                "|- Fecha: " + date +"\n"+
+                "|- Dias prestados: " + lentDays +"\n"+
+                "|------------------------|";
     }
 
-
-
-
+    public String getId() {
+        return id;
+    }
 }

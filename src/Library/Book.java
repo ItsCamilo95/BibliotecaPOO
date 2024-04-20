@@ -30,14 +30,15 @@ public class Book {
 
     @Override
     public String toString() {
-        return "titulo: " + title+"\n"+
-                "autor: " + author +"\n"+
-                "ISBN: " + ISBN +"\n"+
-                "editorial: " + editorial +"\n"+
-                "año de publicación: " + year +"\n"+
-                "precio: " + price;
+        return  "\n"+"|------------------------|"+"\n"+
+                "|- Titulo: " + title+"\n"+
+                "|- Autor: " + author +"\n"+
+                "|- ISBN: " + ISBN +"\n"+
+                "|- Editorial: " + editorial +"\n"+
+                "|- Año de publicación: " + year +"\n"+
+                "|- Precio: " + price+"\n"+
+                "|------------------------|";
     }
-
 
     public String getAuthor() {
         return this.author;
